@@ -9,13 +9,13 @@ body {
 	background-image: url('images/Login-blue.jpg');
 }
 .rateImpactor{
-<<<<<<< HEAD
+
 	background-image:url("images/viewBackground.png");
 	background-size: 100% 231%;
   	background-repeat: repeat;
-=======
+
 	background-color: red;
->>>>>>> branch 'master' of https://github.com/jamadagniVijay/RateImpactor.git
+
 }
 .wrapper {
 	position: relative;
@@ -76,13 +76,13 @@ body {
 	font-weight: bold;
 	padding: 25px 0px;
   	border-radius: 0px;
-<<<<<<< HEAD
+
   	font-size: 1.1em;
   	color:rgb(26,61,91);
-=======
+
   	font-size: 1em;
   	color:rgb(35,82,124);
->>>>>>> branch 'master' of https://github.com/jamadagniVijay/RateImpactor.git
+
 }
 
 .activeTab
