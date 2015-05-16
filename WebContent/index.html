@@ -6,25 +6,10 @@
 <link rel="stylesheet" type="css/text" href="libraries/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-	<div class="wrapper">
-		<div class="middle">
-			<div class="heading row">Executive Dashboard</div>
-			<div class="col-sm-2"></div>
-			<div class="loginFieldWrapper col-sm-9 row">
-				<div class="form-group col-sm-12">
-					<input type="text" placeholder="USER NAME" name="username" class="form-control form-control-extended"/>
-				</div>
-				<div class="form-group col-sm-12">
-					<input type="password" placeholder="PASSWORD" name="password" class="form-control .form-control-extended"/>
-				</div>
-				<div class="form-group form-group-extended col-sm-12 ">
-					<input type="button" value="LOGIN" class="btn btn-submit" name="submit"/>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="footer">By Entering the App, you agree to terms and
-		conditions.</div>
+<body ng-app="RateImpactorApp" ng-controller="GAICAppController">
+	<ng-view></ng-view>
+	<script type="text/javascript" src="libraries/js/angular.js"></script>
+	<script src="libraries/js/angular-route.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
