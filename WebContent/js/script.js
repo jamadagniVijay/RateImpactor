@@ -65,6 +65,7 @@ RateImpactorApp.directive("apptabs",function(){
 		templateUrl: 'partials/tabs.html'
 		
 	};
+<<<<<<< HEAD
 });
 
 RateImpactorApp.directive('ngEnterKey', function() {
@@ -85,4 +86,6 @@ RateImpactorApp.directive('ngEnterKey', function() {
 			}
 		});
 	};
+=======
+>>>>>>> branch 'master' of https://github.com/jamadagniVijay/RateImpactor.git
 });
