@@ -1,0 +1,18 @@
+app/
+----- controllers/
+---------- mainController.js
+---------- otherController.js
+----- directives/
+---------- mainDirective.js
+---------- otherDirective.js
+----- services/
+---------- userService.js
+---------- itemService.js
+----- js/
+---------- bootstrap.js
+---------- jquery.js
+----- app.js
+views/
+----- mainView.html
+----- otherView.html
+----- index.html
