@@ -5,17 +5,26 @@ RateImpactorApp.controller('GAICAppController', ['$scope',function($scope ) {
 }]);
 
 RateImpactorApp.controller('loginController',['$scope','$location',function($scope,$location){
+	$scope.$parent.backGroundImage = "login";
+	
 	$scope.loginCheck=function(){
-		console.log('loginCheck');
 		if($scope.username == 'test' && $scope.password == 'test123')
 		{
-			console.log('correct credentials');
 			$location.path ('/rateImpactor');
 		}
 	}
 }]);
-RateImpactorApp.controller('rateImactorController',['$scope',function($scope){
-	$scope.title="logged in";
+
+RateImpactorApp.controller('rateImactorController',['$scope','$location',function($scope,$location){
+	$scope.$parent.backGroundImage = 'rateImpactor';
+	$scope.$parent.getClass = function(path) {
+	    if ($location.path().substr(0, path.length) == path) {
+	    	console.log($location.path().substr(0, path.length)+" "+path);
+	      return "activeTab"
+	    } else {
+	      return ""
+	    }
+	}
 }]);
 
 RateImpactorApp.config(['$routeProvider',function($routeProvider){
@@ -23,7 +32,23 @@ RateImpactorApp.config(['$routeProvider',function($routeProvider){
 		templateUrl: 'partials/login.html',
 		controller:'loginController'
 	}).
+	when('/home',{
+		templateUrl:'partials/rateImpactor.html',
+		controller:'rateImactorController'
+	}).
+	when('/dashBoard',{
+		templateUrl:'partials/rateImpactor.html',
+		controller:'rateImactorController'
+	}).
+	when('/corCalci',{
+		templateUrl:'partials/rateImpactor.html',
+		controller:'rateImactorController'
+	}).
 	when('/rateImpactor',{
+		templateUrl:'partials/rateImpactor.html',
+		controller:'rateImactorController'
+	}).
+	when('/busiCrossSell',{
 		templateUrl:'partials/rateImpactor.html',
 		controller:'rateImactorController'
 	}).
@@ -32,3 +57,12 @@ RateImpactorApp.config(['$routeProvider',function($routeProvider){
 	});
 }]);
 
+
+RateImpactorApp.directive("apptabs",function(){
+	return {
+		restrict: "EAC",
+		transclude : true,
+		templateUrl: 'partials/tabs.html'
+		
+	};
+});

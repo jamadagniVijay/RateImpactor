@@ -1,11 +1,16 @@
 body {
 	margin: 0 0 0 0;
 	font-family: "Century Gothic", Tahoma, Verdana, Arial, sans-serif;
-	background-image: url('images/Login-blue.jpg');
 	padding: 0px 0px 0px 0px;
 	color: #fff;
+	/* background-image: url('images/Login-blue.jpg'); */
 }
-
+.login{
+	background-image: url('images/Login-blue.jpg');
+}
+.rateImpactor{
+	background-color: red;
+}
 .wrapper {
 	position: relative;
 }
@@ -56,4 +61,34 @@ body {
 
 .form-group-extended:last-child {
 	margin-bottom: 0px;
+}
+.apptabs ul li a
+{
+	background-image: url("images/tabs.png");
+	background-size:100% 100%;
+	border-right:1px solid rgb(95,158,193);
+	font-weight: bold;
+	padding: 25px 0px;
+  	border-radius: 0px;
+  	font-size: 1em;
+  	color:rgb(35,82,124);
+}
+
+.activeTab
+{
+	color:#fff !important;
+	background-image: url("images/activeTab.png") !important;	
+}
+.activeTab:after {
+    content:'';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    width: 0;
+    height: 0;
+    border-top: solid 10px rgb(35,82,124);
+    border-left: solid 5px transparent;
+    border-right: solid 5px transparent;
+    
 }
