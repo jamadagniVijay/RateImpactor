@@ -3,20 +3,23 @@ body {
 	font-family: "Century Gothic", Tahoma, Verdana, Arial, sans-serif;
 	padding: 0px 0px 0px 0px;
 	color: #fff;
-	/* background-image: url('images/Login-blue.jpg'); */
 }
-.login{
-	background-image: url('images/Login-blue.jpg');
+
+.login, .rateImpactor
+{
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
-.rateImpactor{
-
-	background-image:url("images/viewBackground.png");
-	background-size: 100% 231%;
-  	background-repeat: repeat;
-
-	background-color: red;
-
+.login {
+	background: url('images/Login-blue.jpg')  no-repeat center center fixed;
 }
+
+.rateImpactor {
+	background: url("images/viewBackground.png")  repeat center center fixed;
+}
+
 .wrapper {
 	position: relative;
 }
@@ -45,19 +48,19 @@ body {
 	padding: 20px 10px;
 }
 
-.form-control-extended
-{
-	border-radius:5px;
+.form-control-extended {
+	border-radius: 5px;
 }
-.btn-submit,.btn-submit:focus
-{
+
+.btn-submit, .btn-submit:focus {
 	background-image: url("images/login-button.png");
 	width: 100%;
-	color:#fff;
+	color: #fff;
 	border: none;
-	border-radius:5px;
-	background-size:100%;
+	border-radius: 5px;
+	background-size: 100%;
 }
+
 .footer {
 	font-size: .8em;
 	position: fixed;
@@ -68,38 +71,34 @@ body {
 .form-group-extended:last-child {
 	margin-bottom: 0px;
 }
-.apptabs ul li a
-{
+
+.apptabs ul li a {
 	background-image: url("images/tabs.png");
-	background-size:100% 100%;
-	border-right:1px solid rgb(95,158,193);
+	background-size: 100% 100%;
+	border-right: 1px solid rgb(95, 158, 193);
 	font-weight: bold;
 	padding: 25px 0px;
-  	border-radius: 0px;
-
-  	font-size: 1.1em;
-  	color:rgb(26,61,91);
-
-  	font-size: 1em;
-  	color:rgb(35,82,124);
-
+	border-radius: 0px;
+	font-size: 1.1em;
+	color: rgb(26, 61, 91);
+	font-size: 1em;
+	color: rgb(35, 82, 124);
 }
 
-.activeTab
-{
-	color:#fff !important;
-	background-image: url("images/activeTab.png") !important;	
+.activeTab {
+	color: #fff !important;
+	background-image: url("images/activeTab.png") !important;
 }
+
 .activeTab:after {
-    content:'';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    width: 0;
-    height: 0;
-    border-top: solid 10px rgb(35,82,124);
-    border-left: solid 5px transparent;
-    border-right: solid 5px transparent;
-    
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	width: 0;
+	height: 0;
+	border-top: solid 10px rgb(35, 82, 124);
+	border-left: solid 5px transparent;
+	border-right: solid 5px transparent;
 }
