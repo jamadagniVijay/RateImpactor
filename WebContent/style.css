@@ -5,19 +5,20 @@ body {
 	color: #fff;
 }
 
-.login, .rateImpactor
-{
+.login {
+	background: url('images/Login-blue.jpg')  no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 }
-.login {
-	background: url('images/Login-blue.jpg')  no-repeat center center fixed;
-}
 
 .rateImpactor {
 	background: url("images/viewBackground.png")  repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 .wrapper {
