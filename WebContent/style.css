@@ -6,7 +6,7 @@ body {
 }
 
 .login {
-	background: url('images/Login-blue.jpg')  no-repeat center center fixed;
+	background: url('images/Login-blue.jpg') no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -14,7 +14,7 @@ body {
 }
 
 .rateImpactor {
-	background: url("images/viewBackground.png")  repeat center center fixed;
+	background: url("images/viewBackground.png") repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -102,4 +102,15 @@ body {
 	border-top: solid 10px rgb(35, 82, 124);
 	border-left: solid 5px transparent;
 	border-right: solid 5px transparent;
+}
+
+.inlay-shadow {
+	box-shadow: inset 0px 0px 24px 0px #ABABAB;
+	-webkit-box-shadow: inset 0px 0px 24px 0px #ABABAB;
+	-moz-box-shadow: inset 0px 0px 24px 0px #ABABAB;
+	-o-box-shadow: inset 0px 0px 24px 0px #ABABAB;
+	border-radius:5px;
+	padding:5px 25px;
+	background: #fff;
+	color:#000;
 }
