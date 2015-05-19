@@ -1,4 +1,4 @@
-RateImpactorApp=angular.module('RateImpactorApp', ['ngRoute']);
+RateImpactorApp=angular.module('RateImpactorApp', ['ngRoute','ui-rangeSlider']);
 
 RateImpactorApp.controller('GAICAppController', ['$scope',function($scope ) {
 
@@ -6,7 +6,7 @@ RateImpactorApp.controller('GAICAppController', ['$scope',function($scope ) {
 
 RateImpactorApp.controller('loginController',['$scope','$location',function($scope,$location){
 	$scope.$parent.backGroundImage = "login";
-	
+
 	$scope.loginCheck=function(){
 		if($scope.username == 'test' && $scope.password == 'test123')
 		{
@@ -18,13 +18,28 @@ RateImpactorApp.controller('loginController',['$scope','$location',function($sco
 RateImpactorApp.controller('rateImactorController',['$scope','$location',function($scope,$location){
 	$scope.$parent.backGroundImage = 'rateImpactor';
 	$scope.$parent.getClass = function(path) {
-	    if ($location.path().substr(0, path.length) == path) {
-	    	console.log($location.path().substr(0, path.length)+" "+path);
-	      return "activeTab"
-	    } else {
-	      return ""
-	    }
+		if ($location.path().substr(0, path.length) == path) {
+			console.log($location.path().substr(0, path.length)+" "+path);
+			return "activeTab"
+		} else {
+			return ""
+		}
 	}
+	$scope.current = {
+			min: 0,
+			max: 80,
+			maxCurrent:100
+	};
+	$scope.revised = {
+			min: 0,
+			max: 80,
+			maxRevised:150
+	};
+	$scope.percent = {
+			min: 0,
+			max: 80,
+			maxPercent:100
+	};
 }]);
 
 RateImpactorApp.config(['$routeProvider',function($routeProvider){
@@ -63,7 +78,7 @@ RateImpactorApp.directive("apptabs",function(){
 		restrict: "EAC",
 		transclude : true,
 		templateUrl: 'partials/tabs.html'
-		
+
 	};
 });
 
