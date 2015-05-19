@@ -85,7 +85,13 @@ body {
 	font-size: 1em;
 	color: rgb(35, 82, 124);
 }
-
+.apptabs ul li:FIRST-CHILD a{
+	padding:0px;
+}
+.apptabs ul li:FIRST-CHILD a.activeTab:after
+{
+	border:none;
+}
 .activeTab {
 	color: #fff !important;
 	background-image: url("images/activeTab.png") !important;
@@ -103,14 +109,52 @@ body {
 	border-left: solid 5px transparent;
 	border-right: solid 5px transparent;
 }
+.activeTab:after:
+{
+	border:none;
+}
+ 
 
 .inlay-shadow {
 	box-shadow: inset 0px 0px 24px 0px #ABABAB;
 	-webkit-box-shadow: inset 0px 0px 24px 0px #ABABAB;
 	-moz-box-shadow: inset 0px 0px 24px 0px #ABABAB;
 	-o-box-shadow: inset 0px 0px 24px 0px #ABABAB;
+	border:1px solid #000;
 	border-radius:5px;
-	padding:5px 25px;
 	background: #fff;
 	color:#000;
+}
+
+.select-padding
+{
+	font-size: 0.8em;
+	padding: 4px 5px!important;
+	margin-left:10px;
+	width:120px;
+}
+
+.line-height
+{
+	line-height: 2em;
+	height:2em;
+}
+.black-font{
+	color:#000;
+	font-size: 0.9em;
+}
+.width20pc
+{
+	width:20% !important;
+}
+
+.options
+{
+	background: rgba(23,23,23,0.4);
+	display: block;
+	margin-top:2em;
+}
+.innerOption
+{
+	padding:20px;
 }
