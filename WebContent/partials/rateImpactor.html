@@ -40,28 +40,37 @@
 		<div class="col-sm-8 rightBorder">
 			<div class="innerOption">
 				<div class="col-sm-10" style="line-height:2em;">
-					<div class="row">
+					<div class="row ">
 						<div class="col-sm-11">
-							<label class="pull-left ">CURRENT BOOK OF BUSINESS</label>
-							<div range-slider min="0" max='current.maxCurrent' model-min="current.min" model-max="current.max" class="col-sm-6"></div>
-							<div class="pull-left">{{current.min}}</div>
-							<div class="pull-right">{{current.max}}</div>
+							<label class="pull-left col-sm-7">CURRENT BOOK OF BUSINESS</label>
+							<div range-slider min="0" max='current.maxCurrent' model-min="current.min" model-max="current.max" class="col-sm-5 pull-right"></div>
+							<!-- <div class="pull-left">{{current.min}}</div>
+							<div class="pull-right">{{current.max}}</div> -->
+						</div>
+						<div class="col-sm-1">
+							<div class="diff pull-left"> <span>{{current.max - current.min | number : 2}}</span></div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm-11">
-							<label class="pull-left ">REVISED BOOK OF BUSINESS</label>
-							<div range-slider min="0" max="revised.maxRevised" model-min="revised.min" model-max="revised.max" class="col-sm-6"></div>
-							<div class="pull-left">{{revised.min}}</div>
-							<div class="pull-right">{{revised.max}}</div>
+							<label class="pull-left col-sm-7">REVISED BOOK OF BUSINESS</label>
+							<div range-slider min="0" max="revised.maxRevised" model-min="revised.min" model-max="revised.max" class="col-sm-5 pull-right"></div>
+							<!--<div class="pull-left">{{revised.min}}</div>
+							<div class="pull-right">{{revised.max}}</div> -->
+						</div>
+						<div class="col-sm-1">
+							<div class="diff pull-left"> <span>{{revised.max - revised.min | number : 2}}</span></div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-sm-11">
-							<label class="pull-left ">REVISED BOOK OF BUSINESS</label>
-							<div range-slider min="0" max="percent.maxPercent" model-min="percent.min" model-max="percent.max" class="col-sm-6"></div>
-							<div class="pull-left">{{percent.min}}</div>
-							<div class="pull-right">{{percent.max}}</div>
+							<label class="pull-left col-sm-7">REVISED BOOK OF BUSINESS</label>
+							<div range-slider min="0" max="percent.maxPercent" model-min="percent.min" model-max="percent.max" class="col-sm-5 pull-right"></div>
+							<!-- <div class="pull-left">{{percent.min}}</div>
+							<div class="pull-right">{{percent.max}}</div> -->
+						</div>
+						<div class="col-sm-1">
+							<div class="diff pull-left"> <span>{{percent.max - percent.min | number : 2		}}%</span></div>
 						</div>
 					</div>
 				</div>
