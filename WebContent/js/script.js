@@ -1,4 +1,4 @@
-RateImpactorApp=angular.module('RateImpactorApp', ['ngRoute','ui-rangeSlider']);
+RateImpactorApp=angular.module('RateImpactorApp', ['ngRoute','uiSlider','ui-rangeSlider']);
 
 RateImpactorApp.controller('GAICAppController', ['$scope',function($scope ) {
 
