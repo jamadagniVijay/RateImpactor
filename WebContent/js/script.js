@@ -101,3 +101,5 @@ RateImpactorApp.directive('ngEnterKey', function() {
 		});
 	};
 });
+
+
