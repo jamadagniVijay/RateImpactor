@@ -1,34 +1,21 @@
-<!--http://prajwalkman.github.io/angular-slider/
-
-http://itslenny.github.io/angular-slidezilla/
-
-https://github.com/prajwalkman/angular-slider
-
- http://angularscript.com/demo/native-angularjs-directive-for-range-slider-input/ -->
-
-<!DOCTYPE HTML>
-<html>
-<script src="libraries/js/canvasjs.min.js"></script>
-<style>
-#chartContainer a {
-	display: none !important;
-}
-body
-{
-	background: #ffffff;
-	background: -moz-linear-gradient(top, #ffffff 0%, #898989 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#898989));
-	background: -webkit-linear-gradient(top, #ffffff 0%,#898989 100%);
-	background: -o-linear-gradient(top, #ffffff 0%,#898989 100%);
-	background: -ms-linear-gradient(top, #ffffff 0%,#898989 100%);
-	background: linear-gradient(to bottom, #ffffff 0%,#898989 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#898989',GradientType=0 );
-	height:100%;
-}
-</style>
+<!doctype html>
+<html ng-app="App">
 <head>
+<meta charset="utf-8">
+<title>Todos $http</title>
+<link rel="stylesheet" href="style.css">
+<script src="libraries/js/angular.js"></script>
 </head>
-<body>
-	<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<body ng-controller="TodoCtrl" style="color:#000">
+		<div ng-repeat="businessunit in businessunits">{{businessunit.businessunitname}}
+	<script>
+		var App = angular.module('App', []);
+
+		App.controller('TodoCtrl', function($scope, $http) {
+			 $http.get('js/jsonData.json').success(function(data) {
+				    $scope.todos = data.usstates;
+				  });
+		});
+	</script>
 </body>
 </html>

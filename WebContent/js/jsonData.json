@@ -1,0 +1,280 @@
+{
+    "usstates": [
+        {
+            "state": "Alabama",
+            "stateletters": "AL"
+        },
+        {
+            "state": "Alaska",
+            "stateletters": "AK"
+        },
+        {
+            "state": "American Samoa",
+            "stateletters": "AS"
+        },
+        {
+            "state": "Arizona",
+            "stateletters": "AZ"
+        },
+        {
+            "state": "Arkansas",
+            "stateletters": "AR"
+        },
+        {
+            "state": "California",
+            "stateletters": "CA"
+        },
+        {
+            "state": "Colorado",
+            "stateletters": "CO"
+        },
+        {
+            "state": "Connecticut",
+            "stateletters": "CT"
+        },
+        {
+            "state": "Delaware",
+            "stateletters": "DE"
+        },
+        {
+            "state": "Dist. of Columbia",
+            "stateletters": "DC"
+        },
+        {
+            "state": "Florida",
+            "stateletters": "FL"
+        },
+        {
+            "state": "Georgia",
+            "stateletters": "GA"
+        },
+        {
+            "state": "Guam",
+            "stateletters": "GU"
+        },
+        {
+            "state": "Hawaii",
+            "stateletters": "HI"
+        },
+        {
+            "state": "Idaho",
+            "stateletters": "ID"
+        },
+        {
+            "state": "Illinois",
+            "stateletters": "IL"
+        },
+        {
+            "state": "Indiana",
+            "stateletters": "IN"
+        },
+        {
+            "state": "Iowa",
+            "stateletters": "IA"
+        },
+        {
+            "state": "Kansas",
+            "stateletters": "KS"
+        },
+        {
+            "state": "Kentucky",
+            "stateletters": "KY"
+        },
+        {
+            "state": "Louisiana",
+            "stateletters": "LA"
+        },
+        {
+            "state": "Maine",
+            "stateletters": "ME"
+        },
+        {
+            "state": "Maryland",
+            "stateletters": "MD"
+        },
+        {
+            "state": "Marshall Islands",
+            "stateletters": "MH"
+        },
+        {
+            "state": "Massachusetts",
+            "stateletters": "MA"
+        },
+        {
+            "state": "Michigan",
+            "stateletters": "MI"
+        },
+        {
+            "state": "Micronesia",
+            "stateletters": "FM"
+        },
+        {
+            "state": "Minnesota",
+            "stateletters": "MN"
+        },
+        {
+            "state": "Mississippi",
+            "stateletters": "MS"
+        },
+        {
+            "state": "Missouri",
+            "stateletters": "MO"
+        },
+        {
+            "state": "Montana",
+            "stateletters": "MT"
+        },
+        {
+            "state": "Nebraska",
+            "stateletters": "NE"
+        },
+        {
+            "state": "Nevada",
+            "stateletters": "NV"
+        },
+        {
+            "state": "New Hampshire",
+            "stateletters": "NH"
+        },
+        {
+            "state": "New Jersey",
+            "stateletters": "NJ"
+        },
+        {
+            "state": "New Mexico",
+            "stateletters": "NM"
+        },
+        {
+            "state": "New York",
+            "stateletters": "NY"
+        },
+        {
+            "state": "North Carolina",
+            "stateletters": "NC"
+        },
+        {
+            "state": "North Dakota",
+            "stateletters": "ND"
+        },
+        {
+            "state": "Northern Marianas",
+            "stateletters": "MP"
+        },
+        {
+            "state": "Ohio",
+            "stateletters": "OH"
+        },
+        {
+            "state": "Oklahoma",
+            "stateletters": "OK"
+        },
+        {
+            "state": "Oregon",
+            "stateletters": "OR"
+        },
+        {
+            "state": "Palau",
+            "stateletters": "PW"
+        },
+        {
+            "state": "Pennsylvania",
+            "stateletters": "PA"
+        },
+        {
+            "state": "Puerto Rico",
+            "stateletters": "PR"
+        },
+        {
+            "state": "Rhode Island",
+            "stateletters": "RI"
+        },
+        {
+            "state": "South Carolina",
+            "stateletters": "SC"
+        },
+        {
+            "state": "South Dakota",
+            "stateletters": "SD"
+        },
+        {
+            "state": "Tennessee",
+            "stateletters": "TN"
+        },
+        {
+            "state": "Texas",
+            "stateletters": "TX"
+        },
+        {
+            "state": "Utah",
+            "stateletters": "UT"
+        },
+        {
+            "state": "Vermont",
+            "stateletters": "VT"
+        },
+        {
+            "state": "Virginia",
+            "stateletters": "VA"
+        },
+        {
+            "state": "Virgin Islands",
+            "stateletters": "VI"
+        },
+        {
+            "state": "Washington",
+            "stateletters": "WA"
+        },
+        {
+            "state": "West Virginia",
+            "stateletters": "WV"
+        },
+        {
+            "state": "Wisconsin",
+            "stateletters": "WI"
+        },
+        {
+            "state": "Wyoming",
+            "stateletters": "WY"
+        }
+    ],
+    "businessunits": [
+        {
+            "businessunitname": "SHS"
+        },
+        {
+            "businessunitname": "AUTO"
+        },
+        {
+            "businessunitname": "SES"
+        },
+        {
+            "businessunitname": "AGRI"
+        },
+        {
+            "businessunitname": "OTH"
+        }
+    ],
+    "rateeffdates": [
+        {
+            "effedate": "12/12/2015"
+        },
+        {
+            "effedate": "12/12/2015"
+        },
+        {
+            "effedate": "12/12/2015"
+        },
+        {
+            "effedate": "12/12/2015"
+        },
+        {
+            "effedate": "12/12/2015"
+        },
+        {
+            "effedate": "12/12/2015"
+        },
+        {
+            "effedate": "12/12/2015"
+        }
+    ]
+}

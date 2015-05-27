@@ -15,7 +15,7 @@ RateImpactorApp.controller('loginController',['$scope','$location',function($sco
 	}
 }]);
 
-RateImpactorApp.controller('rateImactorController',['$scope','$location',function($scope,$location){
+RateImpactorApp.controller('rateImactorController',['$scope','$location','$http',function($scope,$location,$http){
 	$scope.$parent.backGroundImage = 'rateImpactor';
 	$scope.$parent.getClass = function(path) {
 		if ($location.path().substr(0, path.length) == path) {
@@ -40,7 +40,13 @@ RateImpactorApp.controller('rateImactorController',['$scope','$location',functio
 			max: 80,
 			maxPercent:100
 	};
-
+	
+	$http.get('js/jsonData.json').success(function(data) {
+	    $scope.usstates = data.usstates;
+	    $scope.businessunits = data.businessunits;
+	    $scope.rateeffdates = data.rateeffdates;
+	  });
+	
 	$scope.chart = new CanvasJS.Chart("chartContainer", {
 		title:{
 			text: "Premium Change Comparison Chart",
@@ -92,7 +98,6 @@ RateImpactorApp.controller('rateImactorController',['$scope','$location',functio
 		    	   name: "Revised Book of Business",
 		    	   color: "#3690C5",
 		    	   lineThickness: 2,
-
 		    	   dataPoints: [
 		    	                { x: 1, y: 755, label: "Building" },
 		    	                { x: 2, y: 610, label: "Personal Property" },

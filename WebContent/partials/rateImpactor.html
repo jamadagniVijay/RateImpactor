@@ -5,31 +5,20 @@
 			<div class="form-group col-sm-3 line-height">
 				<label class="pull-left black-font">Business Unit</label> <select
 					class=" pull-left inlay-shadow select-padding">
-					<option>SHS</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
+					<option ng-repeat="businessunit in businessunits">{{businessunit.businessunitname}}</option>
 				</select>
 			</div>
 			<div class="form-group col-sm-3 line-height width20pc">
 				<label class="pull-left black-font">State</label> <select
 					class=" pull-left inlay-shadow select-padding">
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
+					<option ng-repeat="stateData in usstates">{{stateData.stateletters}}</option>
 				</select>
 			</div>
+			
 			<div class="form-group col-sm-4 line-height">
 				<label class="pull-left black-font">Rate Effective Date </label> <select
 					class=" pull-left inlay-shadow select-padding" class="form-control">
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
+					<option ng-repeat="date in rateeffdates">{{date.effedate}}</option>
 				</select>
 			</div>
 		</div>
