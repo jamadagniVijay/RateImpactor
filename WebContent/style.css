@@ -12,7 +12,9 @@ body {
 	-o-background-size: cover;
 	background-size: cover;
 }
-
+#chartContainer a {
+	display: none !important;
+}
 .rateImpactor {
 	background: url("images/inner-bg.jpg") repeat center center fixed;
 	-webkit-background-size: cover;

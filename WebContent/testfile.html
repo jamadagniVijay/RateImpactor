@@ -1,85 +1,75 @@
-http://prajwalkman.github.io/angular-slider/
+<!--http://prajwalkman.github.io/angular-slider/
 
 http://itslenny.github.io/angular-slidezilla/
 
 https://github.com/prajwalkman/angular-slider
 
-http://angularscript.com/demo/native-angularjs-directive-for-range-slider-input/
+ http://angularscript.com/demo/native-angularjs-directive-for-range-slider-input/ -->
 
 <!DOCTYPE HTML>
 <html>
 <script src="libraries/js/canvasjs.min.js"></script>
-<head>  
-	<script type="text/javascript">
+<style>
+#chartContainer a {
+	display: none !important;
+}
+</style>
+<head>
+<script type="text/javascript">
 	window.onload = function () {
 		var chart = new CanvasJS.Chart("chartContainer",
 		{
 
 			title:{
-				text: "Premium Change Comparison Chnart",
-				fontSize: 30
+				text: "Premium Change Comparison Chart",
+				fontSize: 14,
+				fontFamily: "Century Gothic"
 			},
                         animationEnabled: true,
 			axisX:{
 
 				gridColor: "Silver",
-				tickColor: "silver",
-				valueFormatString: "DD/MMM"
+				tickColor: "silver"
 
-			},                        
-                        toolTip:{
-                          shared:true
-                        },
-			theme: "theme2",
+			}, 
 			axisY: {
 				gridColor: "Silver",
-				tickColor: "silver"
+				tickColor: "silver",
+				title: "Prermium Change In Million",
+				labelFontFamily: "Century Gothic",
+				titleFontSize: 12,
+				labelWrap: true 
 			},
-			legend:{
-				verticalAlign: "center",
-				horizontalAlign: "right"
-			},
+            toolTip:{
+              shared:true
+            },
+			theme: "theme2",
 			data: [
 			{        
 				type: "line",
 				showInLegend: true,
 				lineThickness: 2,
-				name: "Visits",
-				markerType: "square",
-				color: "#F08080",
+				name: "Current Book of Business",
+				color: "#CC0035",
 				dataPoints: [
-				{ x: new Date(2010,0,3), y: 650 },
-				{ x: new Date(2010,0,5), y: 700 },
-				{ x: new Date(2010,0,7), y: 710 },
-				{ x: new Date(2010,0,9), y: 658 },
-				{ x: new Date(2010,0,11), y: 734 },
-				{ x: new Date(2010,0,13), y: 963 },
-				{ x: new Date(2010,0,15), y: 847 },
-				{ x: new Date(2010,0,17), y: 853 },
-				{ x: new Date(2010,0,19), y: 869 },
-				{ x: new Date(2010,0,21), y: 943 },
-				{ x: new Date(2010,0,23), y: 970 }
+				{ x: 1, y: 650 ,label: "Building"},
+				{ x: 2, y: 700 ,label: "Personal Property" },
+				{ x: 3, y: 710 ,label: "Business Income"},
+				{ x: 4, y: 658 ,label: "SBP" }
 				]
 			},
 			{        
 				type: "line",
 				showInLegend: true,
-				name: "Unique Visits",
-				color: "#20B2AA",
+				name: "Revised Book of Business",
+				color: "#3690C5",
 				lineThickness: 2,
 
 				dataPoints: [
-				{ x: new Date(2010,0,3), y: 510 },
-				{ x: new Date(2010,0,5), y: 560 },
-				{ x: new Date(2010,0,7), y: 540 },
-				{ x: new Date(2010,0,9), y: 558 },
-				{ x: new Date(2010,0,11), y: 544 },
-				{ x: new Date(2010,0,13), y: 693 },
-				{ x: new Date(2010,0,15), y: 657 },
-				{ x: new Date(2010,0,17), y: 663 },
-				{ x: new Date(2010,0,19), y: 639 },
-				{ x: new Date(2010,0,21), y: 673 },
-				{ x: new Date(2010,0,23), y: 660 }
+				{ x: 1, y: 755, label: "Building" },
+				{ x: 2, y: 610, label: "Personal Property" },
+				{ x: 3, y: 950, label: "Business Income" },
+				{ x: 4, y: 760, label: "SBP" }
 				]
 			}
 
@@ -87,6 +77,8 @@ http://angularscript.com/demo/native-angularjs-directive-for-range-slider-input/
 			],
           legend:{
             cursor:"pointer",
+            verticalAlign: "top",
+			horizontalAlign: "right",
             itemclick:function(e){
               if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
               	e.dataSeries.visible = false;
@@ -102,10 +94,8 @@ http://angularscript.com/demo/native-angularjs-directive-for-range-slider-input/
 chart.render();
 }
 </script>
-<script type="text/javascript" src="/assets/script/canvasjs.min.js"></script>
 </head>
 <body>
-	<div id="chartContainer" style="height: 300px; width: 100%;">
-	</div>
+	<div id="chartContainer" style="height: 300px; width: 100%;"></div>
 </body>
 </html>

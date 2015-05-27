@@ -40,6 +40,86 @@ RateImpactorApp.controller('rateImactorController',['$scope','$location',functio
 			max: 80,
 			maxPercent:100
 	};
+	
+	$scope.chart = new CanvasJS.Chart("chartContainer", {
+		title:{
+			text: "Premium Change Comparison Chart",
+			fontSize: 14,
+			fontFamily: "Century Gothic",
+			padding: 10,
+		},
+                    animationEnabled: true,
+		axisX:{
+
+			gridColor: "Silver",
+			tickColor: "silver"
+
+		}, 
+		axisY: {
+			gridColor: "Silver",
+			tickColor: "silver",
+			title: "Prermium Change In Million",
+			labelFontFamily: "Century Gothic",
+			titleFontSize: 12,
+			labelWrap: true 
+		},
+        toolTip:{
+          shared:true
+        },
+		theme: "theme2",
+		data: [
+		{        
+			type: "line",
+			showInLegend: true,
+			lineThickness: 2,
+			name: "Current Book of Business",
+			color: "#CC0035",
+			dataPoints: [
+			{ x: 1, y: 650 ,label: "Building"},
+			{ x: 2, y: 700 ,label: "Personal Property" },
+			{ x: 3, y: 710 ,label: "Business Income"},
+			{ x: 4, y: 658 ,label: "SBP" }
+			]
+		},
+		{        
+			type: "line",
+			showInLegend: true,
+			name: "Revised Book of Business",
+			color: "#3690C5",
+			lineThickness: 2,
+
+			dataPoints: [
+			{ x: 1, y: 755, label: "Building" },
+			{ x: 2, y: 610, label: "Personal Property" },
+			{ x: 3, y: 950, label: "Business Income" },
+			{ x: 4, y: 760, label: "SBP" }
+			]
+		}
+
+		
+		],
+      legend:{
+        cursor:"pointer",
+        verticalAlign: "top",
+		horizontalAlign: "right",
+        itemclick:function(e){
+          if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+          	e.dataSeries.visible = false;
+          }
+          else{
+            e.dataSeries.visible = true;
+          }
+          $scope.chart.render();
+        }
+      }
+    });
+
+    $scope.chart.render(); //render the chart for the first time
+            
+    $scope.changeChartType = function(chartType) {
+        $scope.chart.options.data[0].type = chartType;
+        $scope.chart.render(); //re-render the chart to display the new layout
+    }
 }]);
 
 RateImpactorApp.config(['$routeProvider',function($routeProvider){
