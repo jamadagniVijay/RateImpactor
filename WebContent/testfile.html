@@ -13,87 +13,20 @@ https://github.com/prajwalkman/angular-slider
 #chartContainer a {
 	display: none !important;
 }
+body
+{
+	background: #ffffff;
+	background: -moz-linear-gradient(top, #ffffff 0%, #898989 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#898989));
+	background: -webkit-linear-gradient(top, #ffffff 0%,#898989 100%);
+	background: -o-linear-gradient(top, #ffffff 0%,#898989 100%);
+	background: -ms-linear-gradient(top, #ffffff 0%,#898989 100%);
+	background: linear-gradient(to bottom, #ffffff 0%,#898989 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#898989',GradientType=0 );
+	height:100%;
+}
 </style>
 <head>
-<script type="text/javascript">
-	window.onload = function () {
-		var chart = new CanvasJS.Chart("chartContainer",
-		{
-
-			title:{
-				text: "Premium Change Comparison Chart",
-				fontSize: 14,
-				fontFamily: "Century Gothic"
-			},
-                        animationEnabled: true,
-			axisX:{
-
-				gridColor: "Silver",
-				tickColor: "silver"
-
-			}, 
-			axisY: {
-				gridColor: "Silver",
-				tickColor: "silver",
-				title: "Prermium Change In Million",
-				labelFontFamily: "Century Gothic",
-				titleFontSize: 12,
-				labelWrap: true 
-			},
-            toolTip:{
-              shared:true
-            },
-			theme: "theme2",
-			data: [
-			{        
-				type: "line",
-				showInLegend: true,
-				lineThickness: 2,
-				name: "Current Book of Business",
-				color: "#CC0035",
-				dataPoints: [
-				{ x: 1, y: 650 ,label: "Building"},
-				{ x: 2, y: 700 ,label: "Personal Property" },
-				{ x: 3, y: 710 ,label: "Business Income"},
-				{ x: 4, y: 658 ,label: "SBP" }
-				]
-			},
-			{        
-				type: "line",
-				showInLegend: true,
-				name: "Revised Book of Business",
-				color: "#3690C5",
-				lineThickness: 2,
-
-				dataPoints: [
-				{ x: 1, y: 755, label: "Building" },
-				{ x: 2, y: 610, label: "Personal Property" },
-				{ x: 3, y: 950, label: "Business Income" },
-				{ x: 4, y: 760, label: "SBP" }
-				]
-			}
-
-			
-			],
-          legend:{
-            cursor:"pointer",
-            verticalAlign: "top",
-			horizontalAlign: "right",
-            itemclick:function(e){
-              if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-              	e.dataSeries.visible = false;
-              }
-              else{
-                e.dataSeries.visible = true;
-              }
-              chart.render();
-            }
-          }
-		});
-
-chart.render();
-}
-</script>
 </head>
 <body>
 	<div id="chartContainer" style="height: 300px; width: 100%;"></div>
