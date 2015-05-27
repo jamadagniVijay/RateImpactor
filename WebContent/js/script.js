@@ -74,6 +74,7 @@ RateImpactorApp.controller('rateImactorController',['$scope','$location',functio
 		       {        
 		    	   type: "line",
 		    	   showInLegend: true,
+		    	   legendMarkerType: "circle",
 		    	   lineThickness: 2,
 		    	   name: "Current Book of Business",
 		    	   color: "#CC0035",
@@ -87,6 +88,7 @@ RateImpactorApp.controller('rateImactorController',['$scope','$location',functio
 		       {        
 		    	   type: "line",
 		    	   showInLegend: true,
+		    	   legendMarkerType: "circle",
 		    	   name: "Revised Book of Business",
 		    	   color: "#3690C5",
 		    	   lineThickness: 2,
