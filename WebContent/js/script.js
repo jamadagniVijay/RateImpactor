@@ -40,12 +40,13 @@ RateImpactorApp.controller('rateImactorController',['$scope','$location','$http'
 			max: 80,
 			maxPercent:100
 	};
-	
+
 	$http.get('js/jsonData.json').success(function(data) {
-	    $scope.usstates = data.usstates;
-	    $scope.businessunits = data.businessunits;
-	    $scope.rateeffdates = data.rateeffdates;
-	  });
+		$scope.usstates = data.usstates;
+		$scope.businessunits = data.businessunits;
+		$scope.rateeffdates = data.rateeffdates;
+	});
+	var current = [], revised = [];
 	
 	$scope.chart = new CanvasJS.Chart("chartContainer", {
 		title:{
@@ -84,12 +85,7 @@ RateImpactorApp.controller('rateImactorController',['$scope','$location','$http'
 		    	   lineThickness: 2,
 		    	   name: "Current Book of Business",
 		    	   color: "#CC0035",
-		    	   dataPoints: [
-		    	                { x: 1, y: 650 ,label: "Building"},
-		    	                { x: 2, y: 700 ,label: "Personal Property" },
-		    	                { x: 3, y: 710 ,label: "Business Income"},
-		    	                { x: 4, y: 658 ,label: "SBP" }
-		    	                ]
+		    	   dataPoints: current
 		       },
 		       {        
 		    	   type: "line",
@@ -98,12 +94,7 @@ RateImpactorApp.controller('rateImactorController',['$scope','$location','$http'
 		    	   name: "Revised Book of Business",
 		    	   color: "#3690C5",
 		    	   lineThickness: 2,
-		    	   dataPoints: [
-		    	                { x: 1, y: 755, label: "Building" },
-		    	                { x: 2, y: 610, label: "Personal Property" },
-		    	                { x: 3, y: 950, label: "Business Income" },
-		    	                { x: 4, y: 760, label: "SBP" }
-		    	                ]
+		    	   dataPoints:revised
 		       }
 
 
@@ -123,7 +114,9 @@ RateImpactorApp.controller('rateImactorController',['$scope','$location','$http'
 		    	   }
 		       }
 	});
-
+	current = $http.get('rateService/rateimpactor/getPremium/current');
+	revised = $http.get('rateService/rateimpactor/getPremium/revised');
+	
 	$scope.chart.render(); //render the chart for the first time
 }]);
 
