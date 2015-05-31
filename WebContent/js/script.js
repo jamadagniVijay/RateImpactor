@@ -47,8 +47,9 @@ RateImpactorApp.controller('rateImactorController',['$scope','$location','$http'
 		$scope.rateeffdates = data.rateeffdates;
 	});
 	var current = [], revised = [];
-	
-	$scope.chart = new CanvasJS.Chart("chartContainer", {
+
+
+	chart = new CanvasJS.Chart("chartContainer", {
 		title:{
 			text: "Premium Change Comparison Chart",
 			fontSize: 14,
@@ -56,7 +57,7 @@ RateImpactorApp.controller('rateImactorController',['$scope','$location','$http'
 			padding: 10,
 		},
 		animationEnabled: true, 
-		animationDuration: 1000,
+		animationduration: 2000,
 		exportFileName: "Changed Rate Chart",
 		exportEnabled: true,
 		axisX:{
@@ -114,10 +115,47 @@ RateImpactorApp.controller('rateImactorController',['$scope','$location','$http'
 		    	   }
 		       }
 	});
-	current = $http.get('rateService/rateimpactor/getPremium/current');
-	revised = $http.get('rateService/rateimpactor/getPremium/revised');
-	
-	$scope.chart.render(); //render the chart for the first time
+
+	xVal = [1,2,3,4];
+	label = ['Building','Personal Property','Business Income','SBP'];
+	$http.get('rateService/rateimpactor/getPremium/current').success(function (data) {
+		for(var i=0; i< data.length; i++) {
+			current.push({
+				x:xVal[i],
+				y:data[i],
+				label:label[i]
+			});
+		}
+		chart.render();
+	});
+	/*$http.get('rateService/rateimpactor/getPremium/revised').success(function (data) {
+		for(var i=0; i< data.length; i++) {
+			revised.push({
+				x:xVal[i],
+				y:data[i],
+				label:label[i]
+			});
+		}
+		$scope.chart.render();
+	});*/
+	$scope.simiulateDataLoad = function()
+	{
+		
+		$http.get('rateService/rateimpactor/getPremium/revised').success(function (data) {
+			if(revised.length==0)
+			{
+				for(var i=0; i< data.length; i++) {
+					revised.push({
+						x:xVal[i],
+						y:data[i],
+						label:label[i]
+					});
+				}
+				chart.render();
+			}
+		});
+	}
+	//chart.render(); //render the chart for the first time
 }]);
 
 RateImpactorApp.config(['$routeProvider',function($routeProvider){
