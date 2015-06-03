@@ -31,7 +31,7 @@ RateImpactorApp.controller('rateImactorController',['$scope','$location','$http'
 	};
 	$scope.CD = {
 			min: 0,
-			max: 139,
+			max: 138,
 			maxCD:300
 	};
 
@@ -43,72 +43,6 @@ RateImpactorApp.controller('rateImactorController',['$scope','$location','$http'
 	var current = [], revised = [];
 
 
-	chart = new CanvasJS.Chart("chartContainer", {
-		title:{
-			text: "Premium Change Comparison Chart",
-			fontSize: 14,
-			fontFamily: "Century Gothic",
-			padding: 10,
-		},
-		animationEnabled: true, 
-		animationduration: 2000,
-		exportFileName: "Changed Rate Chart",
-		exportEnabled: true,
-		axisX:{
-
-			gridColor: "Silver",
-			tickColor: "silver"
-
-		}, 
-		axisY: {
-			gridColor: "Silver",
-			tickColor: "silver",
-			title: "Prermium Change In Million",
-			labelFontFamily: "Century Gothic",
-			titleFontSize: 12,
-			labelWrap: true 
-		},
-		toolTip:{
-			shared:true
-		},
-		theme: "theme2",
-		data: [
-		       {        
-		    	   type: "line",
-		    	   showInLegend: true,
-		    	   legendMarkerType: "circle",
-		    	   lineThickness: 2,
-		    	   name: "Current Book of Business",
-		    	   color: "#CC0035",
-		    	   dataPoints: current
-		       },
-		       {        
-		    	   type: "line",
-		    	   showInLegend: true,
-		    	   legendMarkerType: "circle",
-		    	   name: "Revised Book of Business",
-		    	   color: "#3690C5",
-		    	   lineThickness: 2,
-		    	   dataPoints:revised
-		       }
-
-
-		       ],
-		       legend:{
-		    	   cursor:"pointer",
-		    	   verticalAlign: "top",
-		    	   horizontalAlign: "right",
-		    	   itemclick:function(e){
-		    		   if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-		    			   e.dataSeries.visible = false;
-		    		   }
-		    		   else{
-		    			   e.dataSeries.visible = true;
-		    		   }
-		    		   e.chart.render();
-		    	   }
-		       }
-	});
 
 	xVal = [1,2,3,4];
 	label = ['Building','Personal Property','Business Income','SBP'];
@@ -150,6 +84,7 @@ RateImpactorApp.controller('rateImactorController',['$scope','$location','$http'
 	});
 
 	$http.get('rateService/rateimpactor/getPremium/revised').success(function (data) {
+		$scope.revisedData = data;
 		for(var i=0; i< data.length; i++) {
 			revised.push({
 				x:xVal[i],
@@ -160,18 +95,98 @@ RateImpactorApp.controller('rateImactorController',['$scope','$location','$http'
 		chart.render();
 	});
 
+	function plotGraph(varCurrentVal, varRevisedVal)
+	{
+		chart = new CanvasJS.Chart("chartContainer", {
+			title:{
+				text: "Premium Change Comparison Chart",
+				fontSize: 14,
+				fontFamily: "Century Gothic",
+				padding: 10,
+			},
+			animationEnabled: true, 
+			animationduration: 2000,
+			exportFileName: "Changed Rate Chart",
+			exportEnabled: true,
+			axisX:{
+
+				gridColor: "Silver",
+				tickColor: "silver"
+
+			}, 
+			axisY: {
+				gridColor: "Silver",
+				tickColor: "silver",
+				title: "Prermium Change In Million",
+				labelFontFamily: "Century Gothic",
+				titleFontSize: 12,
+				labelWrap: true 
+			},
+			toolTip:{
+				shared:true
+			},
+			theme: "theme2",
+			data: [
+			       {        
+			    	   type: "line",
+			    	   showInLegend: true,
+			    	   legendMarkerType: "circle",
+			    	   lineThickness: 2,
+			    	   name: "Current Book of Business",
+			    	   color: "#CC0035",
+			    	   dataPoints: varCurrentVal
+			       },
+			       {        
+			    	   type: "line",
+			    	   showInLegend: true,
+			    	   legendMarkerType: "circle",
+			    	   name: "Revised Book of Business",
+			    	   color: "#3690C5",
+			    	   lineThickness: 2,
+			    	   dataPoints:varRevisedVal
+			       }
 
 
-	$scope.$watch('LCM.maxLCM',function(oldValue, newValue){
-		if(oldValue!=newValue)
+			       ],
+			       legend:{
+			    	   cursor:"pointer",
+			    	   verticalAlign: "top",
+			    	   horizontalAlign: "right",
+			    	   itemclick:function(e){
+			    		   if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+			    			   e.dataSeries.visible = false;
+			    		   }
+			    		   else{
+			    			   e.dataSeries.visible = true;
+			    		   }
+			    		   e.chart.render();
+			    	   }
+			       }
+		});
+
+	}
+	function computeGraph(varOldVal,varNewVal,varRate){
+		if(varOldVal!=varNewVal)
 		{
-			revised = [];
+			
+			var newRevised = [];
+			for(var i=0; i< revised.length; i++) {
+				newRevised.push({
+					x:xVal[i],
+					y:Math.round((($scope.revisedData[i]/varRate)*(varNewVal/100)) * 100) / 100,
+					label:label[i]
+				});
+			}
+			plotGraph(current,newRevised);
 			chart.render();
 		}
-
+	}
+	plotGraph(current,revised);
+	$scope.$watch('LCM.max',function(oldValue, newValue){
+		computeGraph(oldValue,newValue,1.9);
 	});
-	$scope.$watch('CD.maxCD',function(){
-
+	$scope.$watch('CD.max',function(oldValue, newValue){
+		computeGraph(oldValue,newValue,1.38);
 	});
 	//chart.render(); //render the chart for the first time
 }]);
