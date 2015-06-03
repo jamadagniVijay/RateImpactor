@@ -28,29 +28,27 @@
 			<div class="col-sm-7 rightBorder">
 				<div class="row">
 					<div class="col-sm-5 noPadding">
-						<div class="col-sm-offset-2 top-buffer">CURRENT BOOK OF
-							BUSINESS</div>
+						<div class="col-sm-offset-2 top-buffer">PROPERTY LCM</div>
 					</div>
 					<div class="col-sm-5 top-buffer">
-						<div range-slider min="0" max='current.maxCurrent' model-min="current.min" model-max="current.max"></div>
+						<div range-slider min="0" max='LCM.maxLCM' model-min="LCM.min" model-max="LCM.max"></div>
 					</div>
 					<div class="col-sm-2 top-buffer paddingCorrection">
-						<div class="diff "> <span>{{current.max - current.min | number : 3}}</span></div>
+						<div class="diff "> <span>{{(LCM.max/100)  | number : 2}}</span></div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-sm-5 noPadding">
-						<div class="col-sm-offset-2 top-buffer">REVISED BOOK OF
-							BUSINESS</div>
+						<div class="col-sm-offset-2 top-buffer">COMPANY DEVIATION</div>
 					</div>
 					<div class="col-sm-5 top-buffer">
-						<div range-slider min="0" max="revised.maxRevised" model-min="revised.min" model-max="revised.max" ></div>
+						<div range-slider min="0" max="CD.maxCD" model-min="CD.min" model-max="CD.max" ></div>
 					</div>
 					<div class="col-sm-2 top-buffer paddingCorrection">
-						<div class="diff "> <span>{{revised.max - revised.min | number : 3}}</span></div>
+						<div class="diff "> <span>{{(CD.max/100) | number : 2}}</span></div>
 					</div>
 				</div>
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col-sm-5 noPadding">
 						<div class="col-sm-offset-2 top-buffer">CHANGE PERCENTAGE
 							</div>
@@ -61,7 +59,7 @@
 					<div class="col-sm-2 top-buffer paddingCorrection">
 						<div class="diff "> <span>{{percent.max - percent.min | number : 3}}%</span></div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<div class="col-sm-5" style="padding-right: 30px;">
 				<div class="row bottomBorder">
