@@ -165,28 +165,37 @@ RateImpactorApp.controller('rateImactorController',['$scope','$location','$http'
 		});
 
 	}
-	function computeGraph(varOldVal,varNewVal,varRate){
-		if(varOldVal!=varNewVal)
-		{
-			
-			var newRevised = [];
-			for(var i=0; i< revised.length; i++) {
-				newRevised.push({
-					x:xVal[i],
-					y:Math.round((($scope.revisedData[i]/varRate)*(varNewVal/100)) * 100) / 100,
-					label:label[i]
-				});
-			}
-			plotGraph(current,newRevised);
-			chart.render();
+	$scope.currentRate = {
+			LCM : 1.38,
+			CD : 1.9
+	}
+	function computeGraph(varCurrentLCMRate,varCurrentCDRate, varRevisedLCMRate, varRevisedCDRate){	
+		var newRevised = [];
+		for(var i=0; i< revised.length; i++) {
+			newRevised.push({
+				x:xVal[i],
+				y:Math.round((($scope.revisedData[i]/(varCurrentLCMRate*varCurrentCDRate))*(varRevisedLCMRate*varRevisedCDRate)) *100)/100,
+				label:label[i]
+			});
+			//console.log((($scope.revisedData[i]/(varCurrentLCMRate*varCurrentCDRate))*(varRevisedLCMRate*varRevisedCDRate)));
 		}
+		plotGraph(current,newRevised);
+		chart.render();
 	}
 	plotGraph(current,revised);
 	$scope.$watch('LCM.max',function(oldValue, newValue){
-		computeGraph(oldValue,newValue,1.9);
+		if(oldValue!=newValue)
+		{
+			//console.log(($scope.LCM.max/100)+" "+($scope.CD.max/100));
+			computeGraph($scope.currentRate.LCM,$scope.currentRate.CD,($scope.LCM.max/100),($scope.CD.max/100));
+		}
 	});
 	$scope.$watch('CD.max',function(oldValue, newValue){
-		computeGraph(oldValue,newValue,1.38);
+		if(oldValue!=newValue)
+		{
+			//console.log(($scope.LCM.max/100)+" "+($scope.CD.max/100));
+			computeGraph($scope.currentRate.LCM,$scope.currentRate.CD,($scope.LCM.max/100),($scope.CD.max/100));
+		}
 	});
 	//chart.render(); //render the chart for the first time
 }]);
